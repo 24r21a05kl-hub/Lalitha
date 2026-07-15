@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lalitha Cloths and Stitchings Dashboard</title>
+
+
+<!-- CSS CODE -->
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+
+body{
+
+    background:#f5f7fb;
+
+}
+
+
+/* Sidebar */
+
+.sidebar{
+
+    position:fixed;
+    width:250px;
+    height:100vh;
+    background:#08203e;
+    padding:20px;
+
+}
+
+
+.logo{
+
+    color:#ffd700;
+    text-align:center;
+    margin-bottom:30px;
+
+}
+
+
+.sidebar a{
+
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px;
+    margin:8px 0;
+    border-radius:8px;
+
+}
+
+
+.sidebar a:hover{
+
+    background:#ffd700;
+    color:#08203e;
+
+}
+
+
+
+/* Main Content */
+
+.main{
+
+    margin-left:250px;
+    padding:20px;
+
+}
+
+
+
+/* Header */
+
+.header{
+
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+
+/* Banner */
+
+
+.banner{
+
+    margin-top:20px;
+    padding:30px;
+    border-radius:15px;
+    color:white;
+
+    background:linear-gradient(
+        90deg,
+        #08203e,
+        #ffd700
+    );
+
+}
+
+
+
+/* Cards */
+
+
+.cards{
+
+    display:grid;
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+
+.card{
+
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px #ddd;
+
+}
+
+
+.card h2{
+
+    color:#08203e;
+
+}
+
+
+.card p{
+
+    color:gray;
+
+}
+
+
+
+/* Table */
+
+
+.table-box{
+
+    margin-top:30px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+
+}
+
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+
+th{
+
+    background:#08203e;
+    color:white;
+    padding:12px;
+
+}
+
+
+td{
+
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+/* Button */
+
+button{
+
+    background:#ffd700;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    background:#08203e;
+    color:white;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+
+.sidebar{
+
+width:100%;
+height:auto;
+position:relative;
+
+}
+
+
+.main{
+
+margin-left:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+
+<div class="logo">
+
+<h2>✂ Lalitha</h2>
+
+<p>Cloths & Stitchings</p>
+
+</div>
+
+
+
+<a href="#">
+🏠 Dashboard
+</a>
+
+
+<a href="#">
+👥 Customers
+</a>
+
+
+<a href="#">
+📦 Stitching Orders
+</a>
+
+
+<a href="#">
+📏 Measurements
+</a>
+
+
+<a href="#">
+👨‍💼 Employees
+</a>
+
+
+<a href="#">
+💰 Billing
+</a>
+
+
+<a href="#">
+📊 Reports
+</a>
+
+
+<a href="#" onclick="logout()">
+🚪 Logout
+</a>
+
+
+</div>
+
+
+
+
+<!-- MAIN -->
+
+
+<div class="main">
+
+
+<div class="header">
+
+
+<h2>
+Dashboard
+</h2>
+
+
+<h3>
+Admin
+</h3>
+
+
+</div>
+
+
+
+
+<div class="banner">
+
+
+<h1>
+Welcome to Lalitha Cloths and Stitchings
+</h1>
+
+
+<p>
+Premium Tailoring Management System
+</p>
+
+
+<br>
+
+
+<button onclick="newOrder()">
+
+Create New Order
+
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- CARDS -->
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h2>250</h2>
+
+<p>Total Customers</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>120</h2>
+
+<p>Total Orders</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>35</h2>
+
+<p>Pending Orders</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>₹1,25,000</h2>
+
+<p>Revenue</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- ORDER TABLE -->
+
+
+<div class="table-box">
+
+
+<h2>
+Recent Stitching Orders
+</h2>
+
+
+<br>
+
+
+<table>
+
+
+<tr>
+
+<th>
+Order ID
+</th>
+
+<th>
+Customer
+</th>
+
+<th>
+Dress
+</th>
+
+<th>
+Status
+</th>
+
+</tr>
+
+
+
+<tr>
+
+<td>
+1001
+</td>
+
+<td>
+Ravi
+</td>
+
+<td>
+Shirt
+</td>
+
+<td>
+Pending
+</td>
+
+</tr>
+
+
+
+
+<tr>
+
+<td>
+1002
+</td>
+
+<td>
+Sita
+</td>
+
+<td>
+Blouse
+</td>
+
+<td>
+Completed
+</td>
+
+</tr>
+
+
+
+
+<tr>
+
+<td>
+1003
+</td>
+
+<td>
+Kiran
+</td>
+
+<td>
+Pant
+</td>
+
+<td>
+Stitching
+</td>
+
+</tr>
+
+
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- JAVASCRIPT CODE -->
+
+<script>
+
+
+function newOrder(){
+
+alert(
+"New Stitching Order Page Opening..."
+);
+
+}
+
+
+
+function logout(){
+
+alert(
+"You have been logged out!"
+);
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
